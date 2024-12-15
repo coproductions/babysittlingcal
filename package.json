@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "pnpm build",
-    "deploy": "gh-pages -d build"
+    "deploy": "pnpm exec gh-pages -d build"
   },
   "homepage": "https://coproductions.github.io/babysittlingcal",
   "dependencies": {
