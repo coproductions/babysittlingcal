@@ -48,7 +48,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>Babysitten</h1>
+        <h1>Waaroost Babysitters</h1>
         <div id="calendar-container">
           <FullCalendar
             plugins={[timeGridPlugin, dayGridPlugin]} // Include timeGrid for slots
