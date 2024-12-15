@@ -12,15 +12,17 @@ type CalEvent = {
   allDay: boolean;
 };
 
-function getRandomHeading() {
-  const headings = ['✌️', '🌈', '🐬', '🤙','❤️','🌺','😜','😆','🥳'];
-  const randomIndex = Math.floor(Math.random() * headings.length);
-  return headings[randomIndex];
-}
+const HEADINGS = ['✌️', '🌈', '🐬', '🤙','❤️','🌺','😜','😆','🥳'];
 
 function App() {
   const [events, setEvents] = useState<CalEvent[]>([]);
   const [headerText, setHeaderText] = useState("Waaroost Babysitters");
+
+  function getRandomHeading() {
+    const headingsWithoutCurrent = HEADINGS.filter(item => item !== headerText)
+    const randomIndex = Math.floor(Math.random() * headingsWithoutCurrent.length);
+    return headingsWithoutCurrent[randomIndex];
+  }
 
   useEffect(() => {
     const fetchICloudEvents = async () => {
