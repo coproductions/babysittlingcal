@@ -49,3 +49,109 @@
   border: 1px solid #ccc; /* Optional: Add a border */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
 }
+/* General styles */
+body {
+  background-color: #e6e6fa; /* Pastel purple */
+  font-family: 'Poppins', sans-serif; /* Modern and cute font */
+  color: #333; /* Subtle text color for readability */
+  margin: 0;
+  padding: 0;
+}
+
+/* Root container */
+#root {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Header styles */
+h1 {
+  font-size: 2.5rem;
+  color: #5d3fd3; /* Flashy deep purple */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+/* Calendar container */
+#calendar-container {
+  width: 90%; 
+  max-width: 1200px; 
+  margin: 0 auto;
+  background: #ffffff; /* White background for calendar */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Modern shadow */
+  padding: 1rem;
+  border: 2px solid #d3c4f3; /* Subtle purple border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#calendar-container:hover {
+  transform: scale(1.02); /* Slight pop effect on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Flashier hover shadow */
+}
+
+/* Cards */
+.card {
+  padding: 2em;
+  background-color: #f5f5ff; /* Light lavender for cards */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift up on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo styles */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms, transform 0.3s ease;
+  margin: 0 auto;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+  transform: rotate(15deg); /* Add a slight tilt effect */
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Custom button styles for FullCalendar toolbar */
+.fc-button {
+  background-color: #5d3fd3 !important; /* Deep purple */
+  border: none !important;
+  color: #fff !important; /* White text */
+  font-size: 1rem !important;
+  border-radius: 5px !important;
+  padding: 0.5rem 1rem !important;
+  transition: background-color 0.3s ease;
+}
+
+.fc-button:hover {
+  background-color: #6e49e3 !important; /* Slightly brighter purple */
+}
+
+/* Calendar header title */
+.fc-toolbar-title {
+  font-size: 1.5rem;
+  color: #5d3fd3;
+}
+
+/* Calendar day background */
+.fc-daygrid-day {
+  background: #f9f9ff; /* Soft lavender */
+}
+
+/* Current time indicator */
+.fc-now-indicator {
+  background-color: #ff6f61 !important; /* Flashy orange for current time */
+}
