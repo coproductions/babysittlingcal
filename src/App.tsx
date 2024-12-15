@@ -69,6 +69,7 @@ function App() {
             plugins={[timeGridPlugin, dayGridPlugin]} // Include timeGrid for slots
             initialView="timeGridWeek" // Default to a time-based view
             events={events}
+            allDaySlot={false}
             slotMinTime="09:00:00" // Set the start of the calendar day
             slotMaxTime="21:00:00" // Set the end of the calendar day
             nowIndicator={true} // Show current time marker
