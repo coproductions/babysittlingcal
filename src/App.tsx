@@ -12,13 +12,19 @@ type CalEvent = {
   allDay: boolean;
 };
 
+function getRandomHeading() {
+  const headings = ['✌️', '🌈', '🐬', '🤙','❤️','🌺','😜','😆','🥳'];
+  const randomIndex = Math.floor(Math.random() * headings.length);
+  return headings[randomIndex];
+}
+
 function App() {
   const [events, setEvents] = useState<CalEvent[]>([]);
+  const [headerText, setHeaderText] = useState("Waaroost Babysitters");
 
   useEffect(() => {
     const fetchICloudEvents = async () => {
-      // const icalUrl = 'https://cors-anywhere.herokuapp.com/https://p133-caldav.icloud.com/published/2/MTk4NDc2MDU3MTk4NDc2MFrl9AjgqmgoYeKioTGOp-QcZBvL89QFWZtIxgjGFN4YeDFPRlVXqElfwdx5ZnBLyHDf4dMRYFhVVeC1WtC5sJw'; // Replace with your iCloud HTTPS URL
-      const icalUrl = "https://fetchicalendar-lrlllebdja-uc.a.run.app"; // Replace with your iCloud HTTPS URL
+      const icalUrl = "https://fetchicalendar-lrlllebdja-uc.a.run.app";
       try {
         const response = await fetch(icalUrl);
         const icalData = await response.text();
@@ -48,7 +54,14 @@ function App() {
   return (
     <>
       <div>
-        <h1>Waaroost Babysitters</h1>
+        <h1 id="header">{headerText}</h1>
+        <button
+          className="bobbling-button"
+          onClick={() => setHeaderText(getRandomHeading())}
+        >
+          Click Mij
+        </button>
+        <h2>Dit is onze beschikbaarhijd!</h2>
         <div id="calendar-container">
           <FullCalendar
             plugins={[timeGridPlugin, dayGridPlugin]} // Include timeGrid for slots
@@ -61,7 +74,6 @@ function App() {
               left: "prev,next today",
               center: "title",
               right: "",
-              // right: 'dayGridMonth,timeGridWeek,timeGridDay',
             }} // Add buttons for view switching
           />
         </div>
