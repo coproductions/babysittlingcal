@@ -73,6 +73,8 @@ function App() {
             slotMinTime="09:00:00" // Set the start of the calendar day
             slotMaxTime="21:00:00" // Set the end of the calendar day
             nowIndicator={true} // Show current time marker
+            locale={'nl-BE'}
+            firstDay={1}
             headerToolbar={{
               left: "prev,next today",
               center: "title",
