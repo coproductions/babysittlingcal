@@ -26,7 +26,8 @@ function App() {
 
   useEffect(() => {
     const fetchICloudEvents = async () => {
-      const icalUrl = "https://fetchicalendar-lrlllebdja-uc.a.run.app";
+      const icalUrl = "https://us-central1-coproductions-c57f0.cloudfunctions.net/fetchBabySittingICalendar";
+      
       try {
         const response = await fetch(icalUrl);
         const icalData = await response.text();
